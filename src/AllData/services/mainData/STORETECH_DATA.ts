@@ -8,7 +8,7 @@ export const STORETECH_DATA: ServicePageData = {
     title: "StoreTech",
     tagline: "Autonomous Retail",
     description: "Cloud-native autonomous retail infrastructure powering unmanned stores, smart self-checkout, and IoT vending across 150+ locations",
-    image: "/assets/platforms/storetech-preview.png", // Ensure path exists
+    image: "./assets/platforms/storetech-preview.png", // Ensure path exists
     icon: "ShoppingCart",
     points: [
       "Unmanned Store Infrastructure",

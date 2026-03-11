@@ -9,7 +9,7 @@ export const AI_DATA: ServicePageData = {
     title: "AI & Machine Learning",
     tagline: "Enterprise Intelligence",
     description: "Transform your business with intelligent solutions. We architect, build, and deploy custom AI systems that drive measurable value and competitive advantage",
-    image: "/assets/images/Service Images/AI & Machine Learning.png",
+    image: "./assets/images/Service Images/AI & Machine Learning.png",
     icon: "Brain",
     points: [
       "Custom LLM Integration",
@@ -18,11 +18,11 @@ export const AI_DATA: ServicePageData = {
       "Automated Workflows"
     ],
     technologies: [
-      { name: "Python", logo: "/assets/images/Technology/Python-logo-notext.svg" },
-      { name: "TensorFlow", logo: "/assets/images/Technology/TensorFlow_logo.svg" },
-      { name: "OpenAI", logo: "/assets/images/Technology/OpenAI_Logo.svg" },
-      { name: "PyTorch", logo: "/assets/images/Technology/Pytorch_logo.png" },
-      { name: "AWS", logo: "/assets/images/Technology/Amazon_Web_Services_Logo.svg" }
+      { name: "Python", logo: "./assets/images/Technology/Python-logo-notext.svg" },
+      { name: "TensorFlow", logo: "./assets/images/Technology/TensorFlow_logo.svg" },
+      { name: "OpenAI", logo: "./assets/images/Technology/OpenAI_Logo.svg" },
+      { name: "PyTorch", logo: "./assets/images/Technology/Pytorch_logo.png" },
+      { name: "AWS", logo: "./assets/images/Technology/Amazon_Web_Services_Logo.svg" }
     ]
   },
 

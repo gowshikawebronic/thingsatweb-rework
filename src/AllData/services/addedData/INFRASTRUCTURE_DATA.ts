@@ -6,7 +6,7 @@ export const INFRASTRUCTURE_DATA: ServicePageData = {
     title: "IT Infrastructure",
     tagline: "Robust Foundation",
     description: "Design, deploy, and manage on-premise, cloud, and hybrid infrastructure. Networking, servers, storage, and disaster recovery",
-    image: "/assets/images/Icons/IT Infrasctructure.svg",
+    image: "./assets/images/Icons/IT Infrasctructure.svg",
     icon: "Server",
     points: ["Network Design (LAN/WAN)", "Hybrid Cloud Setup", "Disaster Recovery", "24/7 Managed Services"],
     technologies: [

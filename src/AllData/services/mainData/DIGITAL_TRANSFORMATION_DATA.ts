@@ -8,7 +8,7 @@ export const DIGITAL_TRANSFORMATION_DATA: ServicePageData = {
     title: "Digital Transformation",
     tagline: "Evolve & Innovate",
     description: "End-to-end digital transformation services. Strategy consulting, process automation, customer experience redesign, cloud migration, and change management for enterprise digital evolution.",
-    image: "/assets/images/Service Images/Digital Transforamtion - Webronic Industires Private Limited.png",
+    image: "./assets/images/Service Images/Digital Transforamtion - Webronic Industires Private Limited.png",
     icon: "Cpu",
     points: [
       "Digital Strategy & Consulting",
@@ -17,11 +17,11 @@ export const DIGITAL_TRANSFORMATION_DATA: ServicePageData = {
       "Technology Modernization"
     ],
     technologies: [
-      { name: "AWS", logo: "/assets/images/Technology/Amazon_Web_Services_Logo.svg" },
-      { name: "Azure", logo: "/assets/images/Technology/Microsoft_Azure.svg" },
-      { name: "Salesforce", logo: "/assets/images/Technology/Salesforce.com_logo.svg.png" },
-      { name: "SAP", logo: "/assets/images/Technology/SAP-Logo.svg.png" },
-      { name: "UiPath", logo: "/assets/images/Technology/brand-uipath-svgrepo-com.svg" }
+      { name: "AWS", logo: "./assets/images/Technology/Amazon_Web_Services_Logo.svg" },
+      { name: "Azure", logo: "./assets/images/Technology/Microsoft_Azure.svg" },
+      { name: "Salesforce", logo: "./assets/images/Technology/Salesforce.com_logo.svg.png" },
+      { name: "SAP", logo: "./assets/images/Technology/SAP-Logo.svg.png" },
+      { name: "UiPath", logo: "./assets/images/Technology/brand-uipath-svgrepo-com.svg" }
     ]
   },
 

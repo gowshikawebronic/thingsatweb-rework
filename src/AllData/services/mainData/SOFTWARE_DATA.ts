@@ -8,7 +8,7 @@ export const SOFTWARE_DATA: ServicePageData = {
     title: "Custom Software Development",
     tagline: "Build Your Vision",
     description: "Custom software development for web, mobile, and desktop. Full stack development, API first integration, legacy modernization. Agile methodology, quality-focused delivery.",
-    image: "/assets/images/Service Images/QA & Testing- Webronic Industires Private Limited.png",
+    image: "./assets/images/Service Images/QA & Testing- Webronic Industires Private Limited.png",
     icon: "Code",
     points: [
       "Custom Web & Mobile Apps",
@@ -17,11 +17,11 @@ export const SOFTWARE_DATA: ServicePageData = {
       "Enterprise Grade Solutions"
     ],
     technologies: [
-      { name: "React", logo: "/assets/images/Technology/react-logo-svgrepo-com.svg" },
-      { name: "Node.js", logo: "/assets/images/Technology/Node.js_logo.svg" },
-      { name: "Python", logo: "/assets/images/Technology/Python-logo-notext.svg" },
-      { name: "Flutter", logo: "/assets/images/Technology/Google-flutter-logo.svg" },
-      { name: "AWS", logo: "/assets/images/Technology/Amazon_Web_Services_Logo.svg" }
+      { name: "React", logo: "./assets/images/Technology/react-logo-svgrepo-com.svg" },
+      { name: "Node.js", logo: "./assets/images/Technology/Node.js_logo.svg" },
+      { name: "Python", logo: "./assets/images/Technology/Python-logo-notext.svg" },
+      { name: "Flutter", logo: "./assets/images/Technology/Google-flutter-logo.svg" },
+      { name: "AWS", logo: "./assets/images/Technology/Amazon_Web_Services_Logo.svg" }
     ]
   },
 

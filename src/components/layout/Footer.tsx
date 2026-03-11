@@ -56,7 +56,7 @@ export default function Footer() {
                     <div className="lg:col-span-5 flex flex-col items-start pr-0 lg:pr-12">
                         <Link href="/" className="mb-8 block no-underline focus:outline-none">
                             <Image
-                                src="/assets/logo/thingsatweb.png"
+                                src="./assets/logo/thingsatweb.png"
                                 alt="Things at Web"
                                 width={180}
                                 height={50}

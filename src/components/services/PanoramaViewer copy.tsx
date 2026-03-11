@@ -108,7 +108,7 @@ export default function PanoramaViewer() {
                 }}
             >
                 <Image
-                    src="/assets/3d/Things-at-Web-Sweden-2.jpg"
+                    src="./assets/3d/Things-at-Web-Sweden-2.jpg"
                     alt="Things at Web Sweden Office"
                     fill
                     className="object-cover"

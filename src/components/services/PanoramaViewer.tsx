@@ -103,7 +103,7 @@ export default function Interactive360Viewer() {
             </>
           ) : (
             <>
-              <PanoramaSphere textureUrl="/assets/3d/Things-at-Web-Sweden-2.jpg" />
+              <PanoramaSphere textureUrl="./assets/3d/Things-at-Web-Sweden-2.jpg" />
               <OrbitControls
                 enableZoom={false}
                 enablePan={false}

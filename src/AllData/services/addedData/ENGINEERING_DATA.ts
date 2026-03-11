@@ -6,7 +6,7 @@ export const ENGINEERING_DATA: ServicePageData = {
     title: "Engineering Services",
     tagline: "Product Innovation",
     description: "Product engineering, embedded systems, and hardware design. From PCB layout to firmware and prototyping",
-    image: "/assets/images/Icons/Engineering Services.svg",
+    image: "./assets/images/Icons/Engineering Services.svg",
     icon: "Cpu",
     points: ["Product Engineering & MVP", "Embedded Systems (Firmware)", "Hardware Design (PCB)", "R&D and Prototyping"],
     technologies: [

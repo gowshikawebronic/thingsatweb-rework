@@ -39,7 +39,7 @@ export default function Navbar() {
     const [mounted, setMounted] = useState(false);
     const { t, language, setLanguage } = useTranslation();
 
-    const currentFlag = language === "sv" ? "/assets/logo/sweden.png" : "/assets/logo/america.png";
+    const currentFlag = language === "sv" ? "./assets/logo/sweden.png" : "./assets/logo/america.png";
 
     // Ensure mounted state is true to prevent hydration errors for Theme toggle
     useEffect(() => setMounted(true), []);
@@ -91,7 +91,7 @@ export default function Navbar() {
                     onClick={() => setIsMenuOpen(false)}
                 >
                     <Image
-                        src="/assets/logo/thingsatweb.png"
+                        src="./assets/logo/thingsatweb.png"
                         alt="Things at Web"
                         width={140}
                         height={40}
@@ -204,11 +204,11 @@ export default function Navbar() {
                                         <span className="text-[10px] text-foreground/50 uppercase font-black tracking-widest">{t("nav.selectLanguage") as string}</span>
                                     </div>
                                     <button onClick={() => { setLanguage("en"); setLangOpen(false); }} className={`flex items-center gap-3 px-3 py-2.5 rounded-xl transition-colors text-xs font-bold uppercase tracking-widest w-full text-left ${language === 'en' ? 'bg-brand-surface dark:bg-gray-800 text-brand-green' : 'text-foreground hover:bg-brand-surface dark:hover:bg-gray-800 hover:text-brand-green'}`}>
-                                        <Image src="/assets/logo/america.png" alt="US" width={20} height={20} className="rounded-full object-cover w-5 h-5 shadow-sm" />
+                                        <Image src="./assets/logo/america.png" alt="US" width={20} height={20} className="rounded-full object-cover w-5 h-5 shadow-sm" />
                                         {t("nav.english") as string}
                                     </button>
                                     <button onClick={() => { setLanguage("sv"); setLangOpen(false); }} className={`flex items-center gap-3 px-3 py-2.5 rounded-xl transition-colors text-xs font-bold uppercase tracking-widest w-full text-left ${language === 'sv' ? 'bg-brand-surface dark:bg-gray-800 text-brand-green' : 'text-foreground hover:bg-brand-surface dark:hover:bg-gray-800 hover:text-brand-green'}`}>
-                                        <Image src="/assets/logo/sweden.png" alt="SE" width={20} height={20} className="rounded-full object-cover w-5 h-5 shadow-sm" />
+                                        <Image src="./assets/logo/sweden.png" alt="SE" width={20} height={20} className="rounded-full object-cover w-5 h-5 shadow-sm" />
                                         {t("nav.swedish") as string}
                                     </button>
                                 </div>
@@ -334,11 +334,11 @@ export default function Navbar() {
                             <span className="text-foreground/70 font-bold text-sm tracking-widest uppercase">{t("nav.language") as string}</span>
                             <div className="flex gap-2">
                                 <button onClick={() => { setLanguage("en"); setIsMenuOpen(false); }} className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold uppercase tracking-widest transition-colors ${language === 'en' ? 'bg-brand-surface dark:bg-gray-800 text-brand-green' : 'text-foreground/60 hover:text-brand-green'}`}>
-                                    <Image src="/assets/logo/america.png" alt="US" width={20} height={20} className="w-4 h-4 rounded-full object-cover" />
+                                    <Image src="./assets/logo/america.png" alt="US" width={20} height={20} className="w-4 h-4 rounded-full object-cover" />
                                     {t("nav.eng") as string}
                                 </button>
                                 <button onClick={() => { setLanguage("sv"); setIsMenuOpen(false); }} className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold uppercase tracking-widest transition-colors ${language === 'sv' ? 'bg-brand-surface dark:bg-gray-800 text-brand-green' : 'text-foreground/60 hover:text-brand-green'}`}>
-                                    <Image src="/assets/logo/sweden.png" alt="SE" width={20} height={20} className="w-4 h-4 rounded-full object-cover" />
+                                    <Image src="./assets/logo/sweden.png" alt="SE" width={20} height={20} className="w-4 h-4 rounded-full object-cover" />
                                     {t("nav.swe") as string}
                                 </button>
                             </div>

@@ -6,7 +6,7 @@ export const DESIGN_DATA: ServicePageData = {
     title: "UI/UX Design",
     tagline: "User-Centered Design",
     description: "Research-driven interface design, prototyping, and user experience strategy for web and mobile applications",
-    image: "/assets/images/Icons/UI-UX.svg",
+    image: "./assets/images/Icons/UI-UX.svg",
     icon: "PenTool",
     points: ["UX Research & Strategy", "UI Visual Design", "Interactive Prototyping", "Design Systems"],
     technologies: [

@@ -6,7 +6,7 @@ export const QA_DATA: ServicePageData = {
     title: "QA & Testing",
     tagline: "Quality Assurance",
     description: "Comprehensive QA services: Test automation, performance testing, security testing, and manual functional testing",
-    image: "/assets/images/Icons/QA.svg",
+    image: "./assets/images/Icons/QA.svg",
     icon: "CheckCircle",
     points: ["Test Automation", "Performance & Load Testing", "Security Testing", "Mobile App Testing"],
     technologies: [

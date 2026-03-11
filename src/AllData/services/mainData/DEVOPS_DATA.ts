@@ -8,9 +8,9 @@ export const DEVOPS_DATA: ServicePageData = {
     title: "DevOps & SRE",
     tagline: "Accelerate Delivery",
     description: "DevOps consulting and implementation: CI/CD pipelines, infrastructure as code, Kubernetes, Docker, automated testing, monitoring. Accelerate deployment, improve reliability",
-    image: "/assets/images/Service Images/DevOps.png",
+    image: "./assets/images/Service Images/DevOps.png",
     icon: "Infinity",
-    localIcon: "/assets/images/Icons/DevOps & SRE.svg",
+    localIcon: "./assets/images/Icons/DevOps & SRE.svg",
     points: [
       "Automated CI/CD Pipelines",
       "Infrastructure as Code",
@@ -18,11 +18,11 @@ export const DEVOPS_DATA: ServicePageData = {
       "Site Reliability Engineering"
     ],
     technologies: [
-      { name: "Jenkins", logo: "/assets/images/Technology/Jenkins_logo_with_title.svg" },
-      { name: "Kubernetes", logo: "/assets/images/Technology/Kubernetes_logo_without_workmark.svg" },
-      { name: "Terraform", logo: "/assets/images/Technology/Terraform_Logo.svg" },
-      { name: "Docker", logo: "/assets/images/Technology/Docker_Logo.svg" },
-      { name: "AWS", logo: "/assets/images/Technology/Amazon_Web_Services_Logo.svg" }
+      { name: "Jenkins", logo: "./assets/images/Technology/Jenkins_logo_with_title.svg" },
+      { name: "Kubernetes", logo: "./assets/images/Technology/Kubernetes_logo_without_workmark.svg" },
+      { name: "Terraform", logo: "./assets/images/Technology/Terraform_Logo.svg" },
+      { name: "Docker", logo: "./assets/images/Technology/Docker_Logo.svg" },
+      { name: "AWS", logo: "./assets/images/Technology/Amazon_Web_Services_Logo.svg" }
     ]
   },
 

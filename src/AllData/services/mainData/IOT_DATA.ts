@@ -8,7 +8,7 @@ export const IOT_DATA: ServicePageData = {
     title: "IoT Solutions",
     tagline: "Connect & Optimize",
     description: "Enterprise IoT solutions for manufacturing, retail, healthcare. Industrial IoT, smart buildings, asset tracking, predictive maintenance.",
-    image: "/assets/images/Service Images/IoT - Webronic Industires Private Limited.png",
+    image: "./assets/images/Service Images/IoT - Webronic Industires Private Limited.png",
     icon: "Wifi",
     points: [
       "Industrial IoT & Industry 4.0",
@@ -17,11 +17,11 @@ export const IOT_DATA: ServicePageData = {
       "Predictive Analytics"
     ],
     technologies: [
-      { name: "AWS IoT", logo: "/assets/images/Technology/Amazon_Web_Services_Logo.svg" },
-      { name: "Azure IoT", logo: "/assets/images/Technology/Microsoft_Azure.svg" },
-      { name: "Google Cloud IoT", logo: "/assets/images/Technology/Google_Cloud_logo.svg" },
-      { name: "MQTT", logo: "/assets/images/Technology/Mqtt-hor.svg" },
-      { name: "Docker", logo: "/assets/images/Technology/Docker_Logo.svg" }
+      { name: "AWS IoT", logo: "./assets/images/Technology/Amazon_Web_Services_Logo.svg" },
+      { name: "Azure IoT", logo: "./assets/images/Technology/Microsoft_Azure.svg" },
+      { name: "Google Cloud IoT", logo: "./assets/images/Technology/Google_Cloud_logo.svg" },
+      { name: "MQTT", logo: "./assets/images/Technology/Mqtt-hor.svg" },
+      { name: "Docker", logo: "./assets/images/Technology/Docker_Logo.svg" }
     ]
   },
 
