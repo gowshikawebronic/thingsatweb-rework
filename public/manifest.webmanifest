@@ -1,0 +1,20 @@
+{
+  "name": "Things at Web",
+  "short_name": "Things at Web",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0ead2b",
+  "icons": [
+    {
+      "src": "/assets/favlogo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favlogo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
