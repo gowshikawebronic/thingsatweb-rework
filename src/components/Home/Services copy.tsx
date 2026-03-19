@@ -31,8 +31,8 @@ function FlipCard({ preview, colorClass, linkHref }: FlipCardProps) {
 
                 <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] transform-[translateZ(0)] bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border border-white/50 dark:border-white/10 rounded-[2rem] flex flex-col p-8 overflow-hidden transition-colors duration-[1200ms] group-hover:border-transparent shadow-[0_10px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
                     {/* --- THE SIGNATURE TEXTURE OVERLAYS --- */}
-                    <div className="absolute inset-0 bg-noise opacity-[0.25] mix-blend-overlay pointer-events-none z-0"></div>
-                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4yKSIvPjwvc3ZnPg==')] opacity-20 pointer-events-none z-0"></div>
+                    <div className="absolute inset-0 bg-noise opacity-[0.25] mix-blend-overlay pointer-events-none z-0 dark:hidden"></div>
+                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4yKSIvPjwvc3ZnPg==')] opacity-20 pointer-events-none z-0 dark:hidden"></div>
 
                     {/* Top: Large Floating Transparent Image */}
                     <div className="relative z-10 w-full h-40 flex items-center justify-center mb-6">
@@ -81,8 +81,8 @@ function FlipCard({ preview, colorClass, linkHref }: FlipCardProps) {
                     style={{ WebkitTransform: "rotateY(180deg) translateZ(1px)" }}>
 
                     {/* --- THE SIGNATURE TEXTURE OVERLAYS --- */}
-                    <div className="absolute inset-0 bg-noise opacity-[0.25] mix-blend-overlay pointer-events-none z-0"></div>
-                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4yKSIvPjwvc3ZnPg==')] opacity-20 pointer-events-none z-0"></div>
+                    <div className="absolute inset-0 bg-noise opacity-[0.25] mix-blend-overlay pointer-events-none z-0 dark:hidden"></div>
+                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4yKSIvPjwvc3ZnPg==')] opacity-20 pointer-events-none z-0 dark:hidden"></div>
 
                     {/* Inner Ambient Glow */}
                     <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-40 h-40 blur-3xl opacity-20 pointer-events-none z-0 ${isGreen ? 'bg-brand-green' : 'bg-brand-blue'}`}></div>

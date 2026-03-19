@@ -20,13 +20,13 @@ export default function CTA() {
             {/* --- MAIN CONTENT --- */}
             <div className="container-custom relative z-10 text-center">
                 <FadeUp>
-                    <h2 className="text-5xl md:text-7xl font-display font-black text-white drop-shadow-md mb-8 tracking-tight">
+                    <h2 className="text-[32px] md:text-[70px] font-display font-black text-white drop-shadow-md mb-8 tracking-tight">
                         {t("cta.title") as string} <br className="hidden md:block" />{t("cta.titleLine2") as string}
                     </h2>
                 </FadeUp>
 
                 <FadeUp delay={100}>
-                    <p className="text-white/90 text-xl md:text-2xl mb-12 max-w-2xl mx-auto font-medium drop-shadow-sm">
+                    <p className="text-white/90 text-[18px] md:text-[22px] mb-12 max-w-2xl mx-auto font-medium drop-shadow-sm">
                         {t("cta.description") as string}
                     </p>
                 </FadeUp>

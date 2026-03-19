@@ -43,9 +43,9 @@ export default function UniversalHero({ data }: { data: ServicePageData['hero'] 
                   className="lg:col-span-7 flex flex-col items-start pr-0 lg:pr-10"
                >
                   {/* Massive Typography matching Home/Hero */}
-                  <h1 className="font-display text-foreground font-black text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[1.1] tracking-tight mb-6">
+                  <h1 className="font-display text-foreground font-black text-h1 leading-[1.1] tracking-tight mb-6">
                      {data.badge && (
-                        <span className="block text-xl sm:text-2xl text-foreground/50 tracking-widest uppercase mb-4 font-bold">
+                        <span className="block text-h5 text-foreground/50 tracking-widest uppercase mb-4 font-bold">
                            {data.badge}
                         </span>
                      )}
@@ -53,7 +53,7 @@ export default function UniversalHero({ data }: { data: ServicePageData['hero'] 
                      <span className="text-gradient-blue">{data.titleHighlight}</span>
                   </h1>
 
-                  <p className="text-foreground/70 text-lg md:text-xl leading-relaxed mb-10 max-w-xl font-medium">
+                  <p className="text-foreground/70 text-body leading-relaxed mb-10 max-w-xl font-medium">
                      {data.description}
                   </p>
 
@@ -88,7 +88,7 @@ export default function UniversalHero({ data }: { data: ServicePageData['hero'] 
                            <div className="w-10 h-10 rounded-[0.8rem] bg-brand-blue/10 text-brand-blue flex items-center justify-center mb-4">
                               <Activity size={18} />
                            </div>
-                           <h3 className="text-sm font-bold text-foreground leading-tight m-0">
+                           <h3 className="text-h6 font-bold text-foreground leading-tight m-0">
                               {feature2}
                            </h3>
                            <p className="text-[9px] font-bold text-foreground/40 uppercase tracking-widest block m-0 mt-1">
@@ -108,7 +108,7 @@ export default function UniversalHero({ data }: { data: ServicePageData['hero'] 
                            <div className="w-10 h-10 rounded-[0.8rem] bg-foreground/5 text-foreground/60 flex items-center justify-center mb-4">
                               <CheckCircle2 size={18} />
                            </div>
-                           <h3 className="text-sm font-bold text-foreground leading-tight m-0">
+                           <h3 className="text-h6 font-bold text-foreground leading-tight m-0">
                               {feature3}
                            </h3>
                            <p className="text-[9px] font-bold text-foreground/40 uppercase tracking-widest block m-0 mt-1">
@@ -131,7 +131,7 @@ export default function UniversalHero({ data }: { data: ServicePageData['hero'] 
                            <div className="w-12 h-12 rounded-2xl bg-brand-green/10 text-brand-green flex items-center justify-center mb-6">
                               <Layers size={22} />
                            </div>
-                           <h3 className="text-xl sm:text-2xl font-display font-black text-foreground leading-tight m-0">
+                           <h3 className="text-h4 font-display font-black text-foreground leading-tight m-0">
                               {feature1 || data.titleHighlight}
                            </h3>
                            <p className="text-[10px] font-bold text-foreground/50 uppercase tracking-widest block m-0 mt-2">

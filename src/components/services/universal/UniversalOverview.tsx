@@ -28,13 +28,13 @@ export default function UniversalOverview({ data }: { data: ServicePageData['ove
 
           <div className="space-y-6">
             {data.content.slice(0, 2).map((p, i) => (
-              <p key={i} className="text-foreground/60 text-base sm:text-lg leading-relaxed font-medium">{p}</p>
+              <p key={i} className="text-foreground/60 text-body font-medium">{p}</p>
             ))}
 
             {isExpanded && (
               <div className="space-y-6 animate-in fade-in slide-in-from-top-2 duration-300">
                 {data.content.slice(2).map((p, i) => (
-                  <p className="text-foreground/60 text-base sm:text-lg leading-relaxed font-medium" key={i + 2}>{p}</p>
+                  <p className="text-foreground/60 text-body font-medium" key={i + 2}>{p}</p>
                 ))}
               </div>
             )}
@@ -59,7 +59,7 @@ export default function UniversalOverview({ data }: { data: ServicePageData['ove
                 <Award size={24} />
               </div>
               <div>
-                <h3 className="text-2xl font-display font-black text-foreground tracking-tight">Key Differentiators</h3>
+                <h3 className="text-h4 font-display font-black text-foreground">Key Differentiators</h3>
                 <p className="text-sm text-foreground/40 font-bold uppercase tracking-widest mt-1 m-0">Why Choose Us?</p>
               </div>
             </div>
@@ -87,12 +87,12 @@ export default function UniversalOverview({ data }: { data: ServicePageData['ove
                         </div>
 
                         {/* Title */}
-                        <h4 className={`text-xl font-display font-bold text-foreground mb-3 tracking-tight transition-colors ${isGreen ? 'group-hover:text-brand-green' : 'group-hover:text-brand-blue'}`}>
+                        <h4 className={`text-h5 font-display font-bold text-foreground mb-3 transition-colors ${isGreen ? 'group-hover:text-brand-green' : 'group-hover:text-brand-blue'}`}>
                           {item.title}
                         </h4>
 
                         {/* Description */}
-                        <p className="text-sm font-medium text-foreground/60 leading-relaxed flex-grow m-0">
+                        <p className="text-body-small font-medium text-foreground/60 flex-grow m-0">
                           {item.description}
                         </p>
 

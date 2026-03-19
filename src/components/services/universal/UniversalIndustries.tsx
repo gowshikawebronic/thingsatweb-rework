@@ -137,7 +137,7 @@ export default function UniversalIndustries({ data }: { data: ServicePageData['i
                 {/* Category Meta */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 pb-6 border-b border-white/10">
                   <div>
-                    <h3 className="text-2xl sm:text-3xl font-display font-bold text-white mb-2">
+                    <h3 className="text-h3 font-display font-bold text-white mb-2">
                       {currentIndustry.label}
                     </h3>
                     <p className="text-white/70 max-w-2xl font-medium leading-relaxed m-0">
@@ -171,12 +171,12 @@ export default function UniversalIndustries({ data }: { data: ServicePageData['i
                               <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-300 ${theme.iconBox} group-hover:shadow-md`}>
                                 <DynamicIcon name={feature.icon} size={22} strokeWidth={2} />
                               </div>
-                              <h4 className={`font-display font-bold text-foreground text-lg transition-colors ${isGreen ? 'group-hover:text-brand-green' : 'group-hover:text-brand-blue'}`}>
+                              <h4 className={`font-display font-bold text-foreground text-h5 transition-colors ${isGreen ? 'group-hover:text-brand-green' : 'group-hover:text-brand-blue'}`}>
                                 {feature.title}
                               </h4>
                             </div>
 
-                            <p className="relative z-10 text-sm text-foreground/60 leading-relaxed grow m-0">
+                            <p className="relative z-10 text-body-small text-foreground/60 grow m-0">
                               {feature.desc}
                             </p>
 

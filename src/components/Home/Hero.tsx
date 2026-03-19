@@ -130,7 +130,7 @@ export default function Hero() {
                     className="w-full lg:w-1/2 max-w-2xl z-10"
                 >
                     {/* Animated Heading */}
-                    <h1 className="font-display text-foreground font-black text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[1.1] tracking-tight mb-6">
+                    <h1 className="font-display text-foreground font-black text-[28px] sm:text-[36px] lg:text-[52px] xl:text-[70px] leading-[1.1] tracking-tight mb-6">
                         {t("hero.titleLine1") as string} <br />
                         {t("hero.titleLine2") as string}{" "}<RotatingText
                             words={t("hero.rotatingWords") as string[]}
@@ -139,7 +139,7 @@ export default function Hero() {
                     </h1>
 
                     {/* Minimal Paragraph */}
-                    <p className="text-foreground/70 text-lg md:text-xl leading-relaxed mb-10 max-w-xl font-medium">
+                    <p className="text-foreground/70 text-[18px] md:text-[20px] leading-relaxed mb-10 max-w-xl font-medium">
                         {t("hero.description") as string}
                         <span className="block mt-4 text-foreground font-bold">
                             {t("hero.descriptionBold") as string}

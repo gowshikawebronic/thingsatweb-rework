@@ -67,7 +67,7 @@ export default function UniversalProcess({ data }: { data: ServicePageData['proc
                   {/* --- RIGHT: CONTENT --- */}
                   <div className="flex-1 pt-1">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
-                      <h3 className={`text-2xl sm:text-3xl font-display font-black text-foreground tracking-tight transition-colors ${isGreen ? 'group-hover:text-brand-green' : 'group-hover:text-brand-blue'}`}>{phase.title}</h3>
+                      <h3 className={`text-h3 font-display font-black text-foreground transition-colors ${isGreen ? 'group-hover:text-brand-green' : 'group-hover:text-brand-blue'}`}>{phase.title}</h3>
 
                       <div className="flex items-center gap-1.5 px-3 py-1 bg-white/80 dark:bg-white/[0.06] backdrop-blur-sm rounded-lg border border-white/50 dark:border-white/[0.08] shadow-sm w-fit">
                         <Clock size={12} className="text-foreground/40" />
@@ -96,7 +96,7 @@ export default function UniversalProcess({ data }: { data: ServicePageData['proc
                         </h4>
                         <div className="grid sm:grid-cols-2 gap-x-4 gap-y-2">
                           {phase.activities.map((activity, i) => (
-                            <div key={i} className="flex items-start gap-2 text-sm text-foreground/60">
+                            <div key={i} className="flex items-start gap-2 text-body-small text-foreground/60">
                               <ArrowRight size={14} className={`mt-1 shrink-0 ${isGreen ? 'text-brand-green/60' : 'text-brand-blue/60'}`} />
                               <span className="leading-relaxed">{activity}</span>
                             </div>

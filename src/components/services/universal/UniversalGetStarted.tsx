@@ -48,8 +48,8 @@ export default function UniversalGetStarted({ data }: { data: ServicePageData['g
                     </div>
 
                     {/* Title */}
-                    <h3 className={`relative z-10 text-2xl sm:text-3xl font-display font-black mb-2 text-foreground tracking-tight transition-colors ${isGreen ? 'group-hover:text-brand-green' : 'group-hover:text-brand-blue'}`}>{card.title}</h3>
-                    <p className="relative z-10 text-base font-medium mb-8 text-foreground/60 m-0">{card.description}</p>
+                    <h3 className={`relative z-10 text-h3 font-display font-black mb-2 text-foreground transition-colors ${isGreen ? 'group-hover:text-brand-green' : 'group-hover:text-brand-blue'}`}>{card.title}</h3>
+                    <p className="relative z-10 text-body font-medium mb-8 text-foreground/60 m-0">{card.description}</p>
 
                     {/* Checklist — Glass Sub-Cards */}
                     <ul className="relative z-10 space-y-3 mb-8 flex-grow">

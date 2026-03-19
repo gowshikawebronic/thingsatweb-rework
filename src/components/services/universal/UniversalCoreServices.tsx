@@ -96,18 +96,18 @@ export default function UniversalCoreServices({ data }: { data: ServicePageData[
                                         </div>
 
                                         <div className="relative z-10 flex-1">
-                                            <h3 className={`text-2xl font-display font-bold text-foreground tracking-tight mb-4 transition-colors duration-300 ${isGreen ? 'group-hover:text-brand-green' : 'group-hover:text-brand-blue'}`}>
+                                            <h3 className={`text-h4 font-display font-bold text-foreground mb-4 transition-colors duration-300 ${isGreen ? 'group-hover:text-brand-green' : 'group-hover:text-brand-blue'}`}>
                                                 {card.title}
                                             </h3>
 
-                                            <p className="text-foreground/60 leading-relaxed mb-6 m-0">
+                                            <p className="text-body text-foreground/60 mb-6 m-0">
                                                 {card.desc}
                                             </p>
 
                                             {card.list && (
                                                 <ul className="space-y-3 mb-6">
                                                     {card.list.map((item, i) => (
-                                                        <li key={i} className="flex items-start gap-3 text-sm font-semibold text-foreground/70">
+                                                        <li key={i} className="flex items-start gap-3 text-body-small font-semibold text-foreground/70">
                                                             <CheckCircle2 size={16} className={`mt-0.5 shrink-0 ${isGreen ? 'text-brand-green' : 'text-brand-blue'}`} />
                                                             {item}
                                                         </li>
@@ -149,7 +149,7 @@ export default function UniversalCoreServices({ data }: { data: ServicePageData[
                             </div>
                             <div>
                                 <h4 className="text-xs font-black uppercase tracking-widest text-foreground/40 mb-1">{data.footer.left.title}</h4>
-                                <p className="text-2xl font-display font-black text-foreground tracking-tight m-0">{data.footer.left.content}</p>
+                                <p className="text-h4 font-display font-black text-foreground tracking-tight m-0">{data.footer.left.content}</p>
                             </div>
                         </div>
                     </FadeUp>
@@ -224,10 +224,10 @@ export default function UniversalCoreServices({ data }: { data: ServicePageData[
                                             <div className={`h-14 w-14 rounded-2xl flex items-center justify-center ${selectedCard.bg} ${selectedCard.color} mb-6 shadow-sm`}>
                                                 <DynamicIcon name={selectedCard.icon} size={28} strokeWidth={1.5} />
                                             </div>
-                                            <h2 className="text-3xl font-display font-black text-foreground mb-4 tracking-tight">
+                                            <h2 className="text-h3 font-display font-black text-foreground mb-4">
                                                 {selectedCard.title}
                                             </h2>
-                                            <p className="text-[15px] text-foreground/60 leading-relaxed font-medium m-0">
+                                            <p className="text-body text-foreground/60 font-medium m-0">
                                                 {selectedCard.desc}
                                             </p>
                                         </div>
@@ -258,7 +258,7 @@ export default function UniversalCoreServices({ data }: { data: ServicePageData[
                                                 {section.heading && (
                                                     <div className="flex items-center gap-4 mb-8">
                                                         <div className="h-px bg-foreground/10 flex-1" />
-                                                        <h4 className="text-xl font-display font-black text-foreground bg-background px-4 border border-foreground/10 rounded-full py-1 shadow-sm">
+                                                        <h4 className="text-h5 font-display font-black text-foreground bg-background px-4 border border-foreground/10 rounded-full py-1 shadow-sm">
                                                             {section.heading}
                                                         </h4>
                                                         <div className="h-px bg-foreground/10 flex-1" />
@@ -272,11 +272,11 @@ export default function UniversalCoreServices({ data }: { data: ServicePageData[
                                                                 {item.term && (
                                                                     <div className="flex items-baseline gap-2 mb-2">
                                                                         <div className="h-2 w-2 rounded-full bg-brand-blue shrink-0" />
-                                                                        <h5 className="text-lg font-bold text-foreground">{item.term}</h5>
+                                                                        <h5 className="text-h6 font-bold text-foreground">{item.term}</h5>
                                                                     </div>
                                                                 )}
                                                                 {item.description && (
-                                                                    <p className="text-foreground/60 text-sm leading-relaxed pl-4 border-l-2 border-foreground/10 m-0">
+                                                                    <p className="text-foreground/60 text-body-small pl-4 border-l-2 border-foreground/10 m-0">
                                                                         {item.description}
                                                                     </p>
                                                                 )}

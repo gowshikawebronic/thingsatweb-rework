@@ -51,12 +51,12 @@ export default function SectionHeader({
             className={`mb-16 md:mb-24 flex flex-wrap items-baseline gap-3 sm:gap-4 ${className}`}
         >
             {subtitle && (
-                <span className={`text-3xl sm:text-4xl lg:text-5xl font-medium tracking-widest font-body uppercase ${finalSubtitleColor}`}>
+                <span className={`text-[20px] sm:text-[26px] lg:text-[34px] font-medium tracking-widest font-body uppercase ${finalSubtitleColor}`}>
                     {subtitle}
                 </span>
             )}
             <h2
-                className={`text-[55px] sm:text-[80px] lg:text-[120px] xl:text-[150px] font-display font-black leading-none tracking-tighter m-0 uppercase flex flex-wrap gap-4 ${titleColorClass}`}
+                className={`text-[36px] sm:text-[48px] lg:text-[60px] xl:text-[70px] font-display font-black leading-none tracking-tighter m-0 uppercase flex flex-wrap gap-4 ${titleColorClass}`}
             >
                 {title}
                 {highlightText && (

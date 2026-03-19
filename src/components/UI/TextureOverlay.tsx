@@ -7,7 +7,7 @@ interface TextureOverlayProps {
 export default function TextureOverlay({ className = "opacity-20" }: TextureOverlayProps) {
     return (
         <div
-            className={`absolute inset-0 pointer-events-none z-0 ${className}`}
+            className={`absolute inset-0 pointer-events-none z-0 dark:hidden ${className}`}
             style={{
                 backgroundImage: "url('./assets/textures/white-texture.png')",
                 backgroundRepeat: "repeat"

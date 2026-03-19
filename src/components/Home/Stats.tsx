@@ -27,10 +27,10 @@ function StatCard({ target, suffix, isDecimal, label }: StatCardProps) {
 
                 {/* Card Content */}
                 <div className="relative z-10 flex flex-col items-center text-center">
-                    <div className="text-5xl md:text-7xl font-display font-black mb-3 drop-shadow-sm text-brand-blue transition-transform duration-500 group-hover:scale-105">
+                    <div className="text-[32px] md:text-[52px] font-display font-black mb-3 drop-shadow-sm text-brand-blue transition-transform duration-500 group-hover:scale-105">
                         <StatCounter target={target} isDecimal={isDecimal} suffix={suffix} />
                     </div>
-                    <div className="text-sm md:text-base font-bold text-foreground/60 uppercase tracking-[0.2em] group-hover:text-foreground/80 transition-colors duration-300">
+                    <div className="text-[18px] font-bold text-foreground/60 uppercase tracking-[0.2em] group-hover:text-foreground/80 transition-colors duration-300">
                         {label}
                     </div>
                 </div>

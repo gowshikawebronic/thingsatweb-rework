@@ -37,7 +37,7 @@ export default function UniversalTechStack({ id, data }: { id: string, data: Ser
           title={data.heading}
           description={data.description}
           centered={true}
-          className="max-w-2xl mx-auto mb-16 text-white [&_h2]:text-white [&_h3]:text-white [&_p]:text-white/80 [&_span]:text-white/70"
+          className="max-w-2xl mx-auto mb-16 text-white dark:text-black [&_h2]:text-white dark:[&_h2]:text-black [&_h3]:text-white dark:[&_h3]:text-black [&_p]:text-white/80 dark:[&_p]:text-black/80 [&_span]:text-white/70 dark:[&_span]:text-black/70"
           size="default"
         />
 
@@ -56,7 +56,7 @@ export default function UniversalTechStack({ id, data }: { id: string, data: Ser
                 return (
                   <FadeUp key={`framework-${i}`} delay={i * 60}>
                     <TiltCard className="h-full w-full">
-                      <div className="relative h-full w-full bg-white/90 dark:bg-white/[0.08] backdrop-blur-2xl border border-white/50 dark:border-white/[0.12] rounded-[2rem] p-8 flex flex-col shadow-xl overflow-hidden transition-all duration-500 group hover:border-brand-blue/30">
+                      <div className="relative h-full w-full bg-white/90 backdrop-blur-2xl border border-white/50 rounded-[2rem] p-8 flex flex-col shadow-xl overflow-hidden transition-all duration-500 group hover:border-brand-blue/30">
                         <TextureOverlay />
 
                         {/* Ambient Glow */}
@@ -67,12 +67,12 @@ export default function UniversalTechStack({ id, data }: { id: string, data: Ser
                             <div className="h-12 w-12 rounded-2xl bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white group-hover:shadow-md transition-all duration-400 shrink-0">
                               <Code2 size={22} strokeWidth={2} />
                             </div>
-                            <h4 className="text-lg font-display font-bold text-foreground leading-snug break-words group-hover:text-brand-blue transition-colors">
+                            <h4 className="text-h5 font-display font-bold text-foreground dark:text-black leading-snug break-words group-hover:text-brand-blue transition-colors">
                               {typeof item.name === 'string' ? item.name.replace(/\//g, ' / ') : item.name}
                             </h4>
                           </div>
 
-                          <p className="text-sm text-foreground/60 leading-relaxed break-words mt-auto m-0">
+                          <p className="text-body-small text-foreground/60 dark:text-black/60 break-words mt-auto m-0">
                             {item.desc}
                           </p>
 
@@ -95,7 +95,7 @@ export default function UniversalTechStack({ id, data }: { id: string, data: Ser
               {hasLLMs && (
                 <FadeUp>
                   <TiltCard className="h-full w-full">
-                    <div className="relative h-full w-full bg-white/90 dark:bg-white/[0.08] backdrop-blur-2xl border border-white/50 dark:border-white/[0.12] rounded-[2rem] p-8 flex flex-col shadow-xl overflow-hidden transition-all duration-500 group hover:border-brand-blue/30">
+                    <div className="relative h-full w-full bg-white/90 backdrop-blur-2xl border border-white/50 rounded-[2rem] p-8 flex flex-col shadow-xl overflow-hidden transition-all duration-500 group hover:border-brand-blue/30">
                       <TextureOverlay />
                       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-blue/10 rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 -translate-y-1/2 translate-x-1/3 pointer-events-none" />
 
@@ -104,8 +104,8 @@ export default function UniversalTechStack({ id, data }: { id: string, data: Ser
                           <LlmIcon size={26} strokeWidth={2} />
                         </div>
                         <div>
-                          <h3 className="text-xl font-display font-bold text-foreground group-hover:text-brand-blue transition-colors">{llmTitle}</h3>
-                          <p className="text-sm font-medium text-brand-blue/80 mt-0.5 m-0">{llmSubtitle}</p>
+                          <h3 className="text-h5 font-display font-bold text-foreground dark:text-black group-hover:text-brand-blue transition-colors">{llmTitle}</h3>
+                          <p className="text-body-small font-medium text-brand-blue/80 mt-0.5 m-0">{llmSubtitle}</p>
                         </div>
                       </div>
 
@@ -115,8 +115,8 @@ export default function UniversalTechStack({ id, data }: { id: string, data: Ser
                           <div key={`llm-${i}`} className="flex items-start gap-4 p-5 rounded-2xl border border-foreground/5 bg-white/60 dark:bg-white/[0.04] backdrop-blur-lg hover:bg-white/80 dark:hover:bg-white/[0.06] hover:border-brand-blue/20 hover:shadow-md transition-all duration-300 w-full group/item">
                             <CheckCircle2 size={18} className="text-brand-blue/60 mt-0.5 shrink-0 group-hover/item:text-brand-blue transition-colors" />
                             <div className="flex-1 min-w-0">
-                              <h5 className="font-display font-semibold text-foreground text-sm mb-1">{item.name}</h5>
-                              <p className="text-sm text-foreground/60 leading-relaxed m-0">{item.desc}</p>
+                              <h5 className="font-display font-semibold text-foreground dark:text-black text-body-small mb-1">{item.name}</h5>
+                              <p className="text-body-small text-foreground/60 dark:text-black/60 m-0">{item.desc}</p>
                             </div>
                           </div>
                         ))}
@@ -129,7 +129,7 @@ export default function UniversalTechStack({ id, data }: { id: string, data: Ser
               {hasMLOps && (
                 <FadeUp delay={100}>
                   <TiltCard className="h-full w-full">
-                    <div className="relative h-full w-full bg-white/90 dark:bg-white/[0.08] backdrop-blur-2xl border border-white/50 dark:border-white/[0.12] rounded-[2rem] p-8 flex flex-col shadow-xl overflow-hidden transition-all duration-500 group hover:border-brand-green/30">
+                    <div className="relative h-full w-full bg-white/90 backdrop-blur-2xl border border-white/50 rounded-[2rem] p-8 flex flex-col shadow-xl overflow-hidden transition-all duration-500 group hover:border-brand-green/30">
                       <TextureOverlay />
                       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-green/10 rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 translate-y-1/2 -translate-x-1/3 pointer-events-none" />
 
@@ -138,8 +138,8 @@ export default function UniversalTechStack({ id, data }: { id: string, data: Ser
                           <MlOpsIcon size={26} strokeWidth={2} />
                         </div>
                         <div>
-                          <h3 className="text-xl font-display font-bold text-foreground group-hover:text-brand-green transition-colors">{mlOpsTitle}</h3>
-                          <p className="text-sm font-medium text-brand-green/80 mt-0.5 m-0">{mlOpsSubtitle}</p>
+                          <h3 className="text-h5 font-display font-bold text-foreground dark:text-black group-hover:text-brand-green transition-colors">{mlOpsTitle}</h3>
+                          <p className="text-body-small font-medium text-brand-green/80 mt-0.5 m-0">{mlOpsSubtitle}</p>
                         </div>
                       </div>
 
@@ -152,13 +152,13 @@ export default function UniversalTechStack({ id, data }: { id: string, data: Ser
                           return (
                             <div key={`mlop-${i}`} className="p-5 rounded-2xl border border-foreground/5 bg-white/60 dark:bg-white/[0.04] backdrop-blur-lg hover:bg-white/80 dark:hover:bg-white/[0.06] hover:border-brand-green/20 hover:shadow-md transition-all duration-300 w-full group/mlop">
                               <div className="flex items-center gap-3 w-full">
-                                <ArrowRight size={16} className="text-foreground/30 group-hover/mlop:text-brand-green transition-colors shrink-0" />
-                                <span className="text-sm font-display font-semibold text-foreground flex-1 min-w-0 break-words leading-snug">
+                                <ArrowRight size={16} className="text-foreground/30 dark:text-black/30 group-hover/mlop:text-brand-green transition-colors shrink-0" />
+                                <span className="text-body-small font-display font-semibold text-foreground dark:text-black flex-1 min-w-0 break-words leading-snug">
                                   {label}
                                 </span>
                               </div>
                               {desc && (
-                                <p className="text-sm text-foreground/60 mt-1.5 pl-7 leading-relaxed break-words m-0">
+                                <p className="text-body-small text-foreground/60 dark:text-black/60 mt-1.5 pl-7 break-words m-0">
                                   {desc}
                                 </p>
                               )}
@@ -185,13 +185,13 @@ export default function UniversalTechStack({ id, data }: { id: string, data: Ser
                 return (
                   <FadeUp key={`cloud-${i}`} delay={i * 60}>
                     <TiltCard className="h-full w-full">
-                      <div className={`relative h-full w-full bg-white/90 dark:bg-white/[0.08] backdrop-blur-2xl border border-white/50 dark:border-white/[0.12] rounded-[2rem] p-8 flex flex-col shadow-xl overflow-hidden transition-all duration-500 group ${isGreen ? 'hover:border-brand-green/30' : 'hover:border-brand-blue/30'}`}>
+                      <div className={`relative h-full w-full bg-white/90 backdrop-blur-2xl border border-white/50 rounded-[2rem] p-8 flex flex-col shadow-xl overflow-hidden transition-all duration-500 group ${isGreen ? 'hover:border-brand-green/30' : 'hover:border-brand-blue/30'}`}>
                         <TextureOverlay />
 
                         <div className={`absolute top-0 left-0 w-24 h-24 blur-3xl opacity-15 pointer-events-none z-0 ${isGreen ? 'bg-brand-green' : 'bg-brand-blue'}`}></div>
 
                         <div className="relative z-10 flex items-center justify-between mb-8">
-                          <h4 className={`text-base font-display font-bold tracking-wide ${platform.color}`}>
+                          <h4 className={`text-body font-display font-bold tracking-wide ${platform.color}`}>
                             {platform.provider}
                           </h4>
                           <div className={`h-10 w-10 rounded-xl flex items-center justify-center transition-all duration-400 ${isGreen ? 'bg-brand-green/10 text-brand-green border border-brand-green/20 group-hover:bg-brand-green group-hover:text-white' : 'bg-brand-blue/10 text-brand-blue border border-brand-blue/20 group-hover:bg-brand-blue group-hover:text-white'}`}>
@@ -208,11 +208,11 @@ export default function UniversalTechStack({ id, data }: { id: string, data: Ser
                               <div key={`service-${j}`} className="flex items-start gap-3 group/service">
                                 <div className={`w-2 h-2 rounded-full mt-1.5 shrink-0 transition-all duration-300 shadow-sm ${bgDotColor} group-hover/service:scale-125`} />
                                 <div className="flex-1">
-                                  <span className="text-sm font-semibold text-foreground block transition-colors">
+                                    <span className="text-body-small font-semibold text-foreground dark:text-black block transition-colors">
                                     {label}
                                   </span>
                                   {desc && (
-                                    <p className="text-sm text-foreground/60 leading-relaxed mt-1 m-0">{desc}</p>
+                                    <p className="text-body-small text-foreground/60 dark:text-black/60 mt-1 m-0">{desc}</p>
                                   )}
                                 </div>
                               </div>

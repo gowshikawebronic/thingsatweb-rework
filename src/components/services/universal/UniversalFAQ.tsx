@@ -53,7 +53,7 @@ export default function UniversalFAQ({ data }: { data: ServicePageData['faq'] })
 
                     <div className="flex-1">
                       {/* Question */}
-                      <h3 className={`text-xl sm:text-2xl font-display font-bold leading-relaxed transition-colors duration-300 ${isOpen ? (isGreen ? "text-brand-green" : "text-brand-blue") : "text-foreground group-hover:text-foreground/80"
+                      <h3 className={`text-h4 font-display font-bold leading-relaxed transition-colors duration-300 ${isOpen ? (isGreen ? "text-brand-green" : "text-brand-blue") : "text-foreground group-hover:text-foreground/80"
                         }`}>
                         {item.question}
                       </h3>
@@ -62,14 +62,14 @@ export default function UniversalFAQ({ data }: { data: ServicePageData['faq'] })
                       <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100 pt-3" : "grid-rows-[0fr] opacity-0 pt-0"
                         }`}>
                         <div className="overflow-hidden">
-                          <p className="text-foreground/60 font-medium leading-relaxed text-base sm:text-lg m-0">
+                          <p className="text-foreground/60 font-medium text-body m-0">
                             {item.answer}
                           </p>
 
                           {item.list && (
                             <ul className="mt-4 space-y-2">
                               {item.list.map((listItem, i) => (
-                                <li key={i} className="flex items-start gap-3 text-foreground/60 font-medium text-base sm:text-lg">
+                                <li key={i} className="flex items-start gap-3 text-foreground/60 font-medium text-body">
                                   <span className={`${isGreen ? 'bg-brand-green' : 'bg-brand-blue'} w-1.5 h-1.5 rounded-full mt-2.5 shrink-0`} />
                                   <span>{listItem}</span>
                                 </li>
@@ -78,7 +78,7 @@ export default function UniversalFAQ({ data }: { data: ServicePageData['faq'] })
                           )}
 
                           {item.answerFooter && (
-                            <p className="mt-4 text-foreground/60 font-medium leading-relaxed text-base sm:text-lg m-0">
+                            <p className="mt-4 text-foreground/60 font-medium text-body m-0">
                               {item.answerFooter}
                             </p>
                           )}

@@ -62,11 +62,11 @@ export default function UniversalRelatedResources({ data }: { data: ServicePageD
                         <DynamicIcon name={service.icon} size={24} />
                       </div>
 
-                      <h4 className="relative z-10 text-lg font-display font-bold text-foreground group-hover:text-brand-green mb-2 transition-colors tracking-tight">
+                      <h4 className="relative z-10 text-h5 font-display font-bold text-foreground group-hover:text-brand-green mb-2 transition-colors tracking-tight">
                         {service.title}
                       </h4>
 
-                      <div className="relative z-10 flex items-center gap-2 text-sm font-bold text-foreground/40 group-hover:text-brand-green transition-colors mt-auto uppercase tracking-wider">
+                      <div className="relative z-10 flex items-center gap-2 text-body-small font-bold text-foreground/40 group-hover:text-brand-green transition-colors mt-auto uppercase tracking-wider">
                         View Details <ArrowRight size={16} />
                       </div>
                     </Link>
@@ -94,15 +94,15 @@ export default function UniversalRelatedResources({ data }: { data: ServicePageD
                         <DynamicIcon name={service.icon} size={24} />
                       </div>
 
-                      <h4 className="relative z-10 text-lg font-display font-bold text-foreground group-hover:text-brand-green mb-2 transition-colors tracking-tight">
+                      <h4 className="relative z-10 text-h5 font-display font-bold text-foreground group-hover:text-brand-green mb-2 transition-colors tracking-tight">
                         {service.name}
                       </h4>
 
-                      <p className="relative z-10 text-sm text-foreground/60 leading-relaxed mb-6 flex-1 m-0">
+                      <p className="relative z-10 text-body-small text-foreground/60 mb-6 flex-1 m-0">
                         {service.desc}
                       </p>
 
-                      <div className="relative z-10 flex items-center gap-2 text-sm font-bold text-foreground/40 group-hover:text-brand-green transition-colors mt-auto uppercase tracking-wider">
+                      <div className="relative z-10 flex items-center gap-2 text-body-small font-bold text-foreground/40 group-hover:text-brand-green transition-colors mt-auto uppercase tracking-wider">
                         View Service <ArrowRight size={16} />
                       </div>
                     </Link>

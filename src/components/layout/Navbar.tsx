@@ -73,16 +73,14 @@ export default function Navbar() {
 
     return (
         <header
-            className={`fixed w-full top-0 z-50 transition-all duration-500 flex justify-center pointer-events-none ${scrolled ? "pt-4" : "pt-0"
-                }`}
+            className={`fixed w-full top-0 z-50 transition-all duration-500 border-b ${
+                scrolled
+                    ? "glass-panel py-3 border-foreground/10 shadow-sm backdrop-blur-xl bg-white/80 dark:bg-gray-900/80"
+                    : "bg-transparent py-6 border-transparent"
+            }`}
         >
             {/* --- MAIN NAVBAR --- */}
-            <div
-                className={`pointer-events-auto flex justify-between items-center transition-all duration-500 rounded-full border border-transparent ${scrolled
-                    ? "w-[95%] max-w-5xl glass-panel py-3 px-6"
-                    : "w-full max-w-7xl bg-transparent py-6 px-6 md:px-12"
-                    }`}
-            >
+            <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-6 md:px-12">
                 {/* Logo */}
                 <Link
                     href="/"
@@ -101,7 +99,7 @@ export default function Navbar() {
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden lg:flex gap-6 items-center font-medium text-sm tracking-wide h-full relative">
+                <nav className="hidden lg:flex gap-6 items-center font-medium text-[18px] tracking-wide h-full relative">
 
                     <Link href="/" className="text-foreground hover:text-brand-green transition-colors no-underline">
                         {t("nav.home") as string}
@@ -132,7 +130,7 @@ export default function Navbar() {
                                                     <IconComp size={16} />
                                                 </div>
                                             )}
-                                            <div className={`font-bold text-foreground group-hover/item:text-brand-green transition-colors text-sm ${!IconComp && 'ml-2'}`}>
+                                            <div className={`font-bold text-foreground group-hover/item:text-brand-green transition-colors text-[18px] ${!IconComp && 'ml-2'}`}>
                                                 {service.name}
                                             </div>
                                         </Link>
@@ -165,7 +163,7 @@ export default function Navbar() {
                                                         {isValidElement(Icon) ? Icon : IconComp && <IconComp size={16} />}
                                                     </div>
                                                 )}
-                                                <div className={`font-bold text-foreground group-hover/item:text-brand-blue transition-colors text-sm ${!Icon && 'ml-2'}`}>
+                                                <div className={`font-bold text-foreground group-hover/item:text-brand-blue transition-colors text-[18px] ${!Icon && 'ml-2'}`}>
                                                     {product.name}
                                                 </div>
                                             </Link>
@@ -227,7 +225,7 @@ export default function Navbar() {
                 </nav>
 
                 {/* Mobile Menu Toggle & Theme Mode Toggle */}
-                <div className="flex items-center gap-2 lg:hidden z-[60] pointer-events-auto">
+                <div className="flex items-center gap-2 lg:hidden z-[60]">
                     {mounted && (
                         <button
                             onClick={toggleTheme}

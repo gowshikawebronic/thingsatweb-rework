@@ -65,12 +65,12 @@ export default function Footer() {
                             />
                         </Link>
 
-                        <h2 className="text-3xl sm:text-4xl font-display font-black text-foreground tracking-tight leading-[1.1] mb-6">
+                        <h2 className="text-[26px] sm:text-[34px] font-display font-black text-foreground tracking-tight leading-[1.1] mb-6">
                             {t("footer.tagline1") as string} <br />
                             {t("footer.tagline2") as string} <span className="text-gradient-blue">{t("footer.tagline3") as string}</span>
                         </h2>
 
-                        <p className="text-foreground/60 font-medium leading-relaxed max-w-md mb-10">
+                        <p className="text-foreground/60 font-medium leading-relaxed max-w-md mb-10 text-[18px]">
                             {t("footer.description") as string}
                         </p>
 
@@ -111,7 +111,7 @@ export default function Footer() {
                                 <li key={i}>
                                     <Link
                                         href={item.href}
-                                        className="text-foreground/80 font-medium hover:text-brand-blue hover:translate-x-1 transition-all duration-300 inline-block"
+                                        className="text-foreground/80 font-medium hover:text-brand-blue hover:translate-x-1 transition-all duration-300 inline-block text-[18px]"
                                     >
                                         {item.name}
                                     </Link>
@@ -132,7 +132,7 @@ export default function Footer() {
                                 <li key={i}>
                                     <Link
                                         href={item.href}
-                                        className="text-foreground/80 font-medium hover:text-brand-blue hover:translate-x-1 transition-all duration-300 inline-block"
+                                        className="text-foreground/80 font-medium hover:text-brand-blue hover:translate-x-1 transition-all duration-300 inline-block text-[18px]"
                                     >
                                         {item.name}
                                     </Link>
@@ -150,15 +150,15 @@ export default function Footer() {
                                 {t("footer.contactTitle") as string}
                             </h4>
                             <div className="flex flex-col gap-4">
-                                <a href="mailto:kontakt@thingsatweb.se" className="text-foreground/80 font-medium hover:text-brand-blue transition-colors flex items-center gap-3">
+                                <a href="mailto:kontakt@thingsatweb.se" className="text-foreground/80 font-medium hover:text-brand-blue transition-colors flex items-center gap-3 text-[18px]">
                                     <Mail size={16} className="text-foreground/30" />
                                     kontakt@thingsatweb.se
                                 </a>
-                                <a href="tel:+46707770727" className="text-foreground/80 font-medium hover:text-brand-blue transition-colors flex items-center gap-3">
+                                <a href="tel:+46707770727" className="text-foreground/80 font-medium hover:text-brand-blue transition-colors flex items-center gap-3 text-[18px]">
                                     <Phone size={16} className="text-foreground/30" />
                                     +46 70 777 07 27
                                 </a>
-                                <div className="text-foreground/80 font-medium flex items-start gap-3 mt-2">
+                                <div className="text-foreground/80 font-medium flex items-start gap-3 mt-2 text-[18px]">
                                     <MapPin size={16} className="text-foreground/30 shrink-0 mt-1" />
                                     <span>Sockerbruksgatan 7 <br /> 53140 Lidköping, SE</span>
                                 </div>
