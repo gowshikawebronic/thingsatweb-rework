@@ -80,25 +80,22 @@ function RotatingText({ words, className = "" }: { words: string[], className?: 
   const longestWord = words.reduce((a, b) => (a.length > b.length ? a : b), "");
 
   return (
-    <span className="relative inline-block">
-      {/* Added className here to perfectly match the font size/style for measuring */}
-      <span className={`invisible pointer-events-none ${className}`}>
-        {longestWord}
-      </span>
-      <AnimatePresence mode="wait">
-        <motion.span
-          key={index}
-          initial={{ y: 30, opacity: 0, filter: "blur(8px)" }}
-          animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-          exit={{ y: -30, opacity: 0, filter: "blur(8px)" }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          // Added className here so the visible text actually gets the gradient!
-          className={`absolute left-0 top-0 whitespace-nowrap ${className}`}
-        >
-          {words[index]}
-        </motion.span>
-      </AnimatePresence>
-    </span>
+    <span className="relative inline-block overflow-visible">
+            {/* pb-2 gives breathing room for descenders */}
+            <span className={`invisible pointer-events-none pb-2 ${className}`}>{longestWord}</span>
+            <AnimatePresence mode="wait">
+                <motion.span
+                    key={index}
+                    initial={{ y: 30, opacity: 0, filter: "blur(8px)" }}
+                    animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+                    exit={{ y: -30, opacity: 0, filter: "blur(8px)" }}
+                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    className={`absolute left-1/2 -translate-x-1/2 top-0 whitespace-nowrap ${className}`}
+                >
+                    {words[index]}
+                </motion.span>
+            </AnimatePresence>
+        </span>
   );
 }
 

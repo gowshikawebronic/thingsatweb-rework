@@ -15,18 +15,18 @@ import { useTranslation } from "@/i18n/LanguageProvider";
 /* ─── ROTATING TEXT ─── */
 function RotatingText({ words, className = "" }: { words: string[]; className?: string }) {
     const [index, setIndex] = useState(0);
-    
+
     useEffect(() => {
         const interval = setInterval(() => setIndex((prev) => (prev + 1) % words.length), 3000);
         return () => clearInterval(interval);
     }, [words.length]);
-    
+
     const longestWord = words.reduce((a, b) => (a.length > b.length ? a : b), "");
-    
+
     return (
-        <span className="relative inline-block">
-            {/* 1. Added className here so the invisible measuring box matches the font style perfectly */}
-            <span className={`invisible pointer-events-none ${className}`}>{longestWord}</span>
+        <span className="relative inline-block overflow-visible">
+            {/* pb-2 gives breathing room for descenders */}
+            <span className={`invisible pointer-events-none pb-2 ${className}`}>{longestWord}</span>
             <AnimatePresence mode="wait">
                 <motion.span
                     key={index}
@@ -34,8 +34,7 @@ function RotatingText({ words, className = "" }: { words: string[]; className?: 
                     animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                     exit={{ y: -30, opacity: 0, filter: "blur(8px)" }}
                     transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                    // 2. Added className here so the visible animated text actually gets the color gradient!
-                    className={`absolute left-0 top-0 whitespace-nowrap ${className}`}
+                    className={`absolute left-1/2 -translate-x-1/2 top-0 whitespace-nowrap ${className}`}
                 >
                     {words[index]}
                 </motion.span>
@@ -109,7 +108,7 @@ export default function AboutClient() {
                     className="relative z-10 flex flex-col items-center max-w-4xl mx-auto mt-8"
                 >
                     <h1 className="font-display text-foreground font-black text-5xl sm:text-7xl lg:text-8xl leading-[1.05] tracking-tight mb-8">
-                        {t("about.heroTitle") as string}{" "}
+                        {t("about.heroTitle") as string} <br />
                         <RotatingText words={t("about.rotatingWords") as string[]} className="text-gradient-green" />
                     </h1>
                     <p className="text-foreground/70 text-lg md:text-xl lg:text-2xl leading-relaxed max-w-2xl font-medium drop-shadow-sm">
@@ -143,8 +142,8 @@ export default function AboutClient() {
                             </div>
                         </div>
 
-                        {/* Right: Values Grid */}
-                        <div className="grid grid-cols-2 gap-4">
+                        {/* Right: Values Flex Col */}
+                        <div className="flex flex-col gap-4">
                             {values.map((item, i) => {
                                 const isGreen = i % 2 === 0;
                                 return (
@@ -157,10 +156,10 @@ export default function AboutClient() {
                                                     <div className={`h-12 w-12 rounded-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-110 ${isGreen ? 'bg-brand-green/10 text-brand-green' : 'bg-brand-blue/10 text-brand-blue'}`}>
                                                         <item.icon size={22} />
                                                     </div>
-                                                    <h4 className={`text-base font-display font-bold text-foreground mb-1 tracking-tight transition-colors ${isGreen ? 'group-hover:text-brand-green' : 'group-hover:text-brand-blue'}`}>
+                                                    <h4 className={`text-[22px] sm:text-[26px] font-display font-bold text-foreground mb-2 tracking-tight transition-colors ${isGreen ? 'group-hover:text-brand-green' : 'group-hover:text-brand-blue'}`}>
                                                         {item.title}
                                                     </h4>
-                                                    <p className="text-xs text-foreground/60 leading-relaxed m-0">{item.desc}</p>
+                                                    <p className="text-[18px] text-foreground/60 leading-relaxed m-0">{item.desc}</p>
                                                 </div>
                                             </div>
                                         </TiltCard>
@@ -171,14 +170,7 @@ export default function AboutClient() {
                     </div>
                 </div>
             </section>
-
-
-
-
-
-
             <TechStack />
-
         </div>
     );
 }

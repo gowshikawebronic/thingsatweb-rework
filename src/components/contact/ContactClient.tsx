@@ -1,29 +1,30 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Mail, Phone, Send, CheckCircle2 } from "lucide-react";
+import { MapPin, Mail, Phone, Send, CheckCircle2, ChevronDown } from "lucide-react";
 import ScrollParallax from "@/components/UI/ScrollParallax";
 import FadeUp from "@/components/UI/FadeUp";
 import TextureOverlay from "@/components/UI/TextureOverlay";
 import TiltCard from "@/components/Home/TiltCard";
 import { useTranslation } from "@/i18n/LanguageProvider";
+import { servicesRegistry } from "@/app/services/data/servicesRegistry";
 
 /* ─── ROTATING TEXT ─── */
 function RotatingText({ words, className = "" }: { words: string[]; className?: string }) {
     const [index, setIndex] = useState(0);
-    
+
     useEffect(() => {
         const interval = setInterval(() => setIndex((prev) => (prev + 1) % words.length), 3000);
         return () => clearInterval(interval);
     }, [words.length]);
-    
+
     const longestWord = words.reduce((a, b) => (a.length > b.length ? a : b), "");
-    
+
     return (
-        <span className="relative inline-block">
-            {/* Added className here for sizing */}
-            <span className={`invisible pointer-events-none ${className}`}>{longestWord}</span>
+        <span className="relative inline-block overflow-visible">
+            {/* pb-2 gives breathing room for descenders */}
+            <span className={`invisible pointer-events-none pb-2 ${className}`}>{longestWord}</span>
             <AnimatePresence mode="wait">
                 <motion.span
                     key={index}
@@ -31,8 +32,7 @@ function RotatingText({ words, className = "" }: { words: string[]; className?: 
                     animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                     exit={{ y: -30, opacity: 0, filter: "blur(8px)" }}
                     transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                    // Added className here so the color is visible
-                    className={`absolute left-0 top-0 whitespace-nowrap ${className}`}
+                    className={`absolute left-1/2 -translate-x-1/2 top-0 whitespace-nowrap ${className}`}
                 >
                     {words[index]}
                 </motion.span>
@@ -79,6 +79,23 @@ export default function ContactClient() {
         consent: false,
     });
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const dropdownRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setIsDropdownOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+
+    const serviceTitles = Object.values(servicesRegistry).map(s => s.preview?.title).filter(Boolean) as string[];
+    if (!serviceTitles.includes("Automation")) {
+        serviceTitles.push("Automation");
+    }
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -121,7 +138,7 @@ export default function ContactClient() {
                     className="relative z-10 flex flex-col items-center max-w-4xl mx-auto mt-8"
                 >
                     <h1 className="font-display text-foreground font-black text-5xl sm:text-7xl lg:text-8xl leading-[1.05] tracking-tight mb-8">
-                        {t("contact.heroTitle") as string}{" "}
+                        {t("contact.heroTitle") as string} <br />
                         <RotatingText words={t("contact.rotatingWords") as string[]} className="text-gradient-blue" />
                     </h1>
                     <p className="text-foreground/70 text-lg md:text-xl lg:text-2xl leading-relaxed max-w-2xl font-medium drop-shadow-sm">
@@ -130,49 +147,10 @@ export default function ContactClient() {
                 </motion.div>
             </section>
 
-            {/* ═══════════════════════════════════════════
-          2. CONTACT INFO CARDS
-      ═══════════════════════════════════════════ */}
-            <section className="relative bg-transparent pb-8 overflow-hidden">
-                <div className="container-custom relative z-10">
-                    <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                        {contactInfoTranslated.map((info, i) => {
-                            const isGreen = info.color === "green";
-                            return (
-                                <FadeUp key={i} delay={i * 80}>
-                                    <TiltCard className="h-full w-full">
-                                        <a
-                                            href={info.href}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="block no-underline h-full"
-                                        >
-                                            <div className={`relative h-full w-full bg-white/60 dark:bg-white/[0.06] backdrop-blur-2xl border border-white/50 dark:border-white/[0.08] rounded-[2rem] p-8 flex flex-col items-center text-center shadow-xl shadow-foreground/[0.03] overflow-hidden transition-all duration-500 group ${isGreen ? 'hover:border-brand-green/30' : 'hover:border-brand-blue/30'}`}>
-                                                <TextureOverlay />
-                                                <div className={`absolute top-0 left-0 w-24 h-24 blur-3xl opacity-10 pointer-events-none z-0 ${isGreen ? 'bg-brand-green' : 'bg-brand-blue'}`} />
 
-                                                <div className="relative z-10 flex flex-col items-center">
-                                                    <div className={`h-14 w-14 rounded-2xl flex items-center justify-center mb-5 border transition-all duration-500 group-hover:scale-110 ${isGreen ? 'bg-brand-green/10 border-brand-green/20 text-brand-green group-hover:bg-brand-green group-hover:text-white' : 'bg-brand-blue/10 border-brand-blue/20 text-brand-blue group-hover:bg-brand-blue group-hover:text-white'}`}>
-                                                        <info.icon size={24} />
-                                                    </div>
-                                                    <span className="text-[10px] font-black uppercase tracking-widest text-foreground/40 mb-2">{info.label}</span>
-                                                    <h3 className={`text-base font-display font-bold text-foreground tracking-tight mb-1 transition-colors ${isGreen ? 'group-hover:text-brand-green' : 'group-hover:text-brand-blue'}`}>
-                                                        {info.value}
-                                                    </h3>
-                                                    <p className="text-xs text-foreground/50 m-0">{info.sub}</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </TiltCard>
-                                </FadeUp>
-                            );
-                        })}
-                    </div>
-                </div>
-            </section>
 
             {/* ═══════════════════════════════════════════
-          3. CONTACT FORM
+          2. CONTACT FORM
       ═══════════════════════════════════════════ */}
             <section className="relative bg-transparent py-24 overflow-hidden">
                 <div className="container-custom relative z-10 max-w-3xl">
@@ -242,13 +220,52 @@ export default function ContactClient() {
                                         </div>
                                         <div>
                                             <label className="block text-xs font-bold text-foreground/40 uppercase tracking-widest mb-2">{t("contact.labelSubject") as string}</label>
-                                            <input
-                                                type="text"
-                                                value={formState.subject}
-                                                onChange={(e) => handleChange("subject", e.target.value)}
-                                                placeholder={t("contact.placeholderSubject") as string}
-                                                className="w-full px-5 py-3.5 bg-white/70 dark:bg-white/[0.04] backdrop-blur-lg border border-white/50 dark:border-white/[0.08] rounded-xl text-foreground placeholder:text-foreground/30 focus:outline-none focus:border-brand-blue/40 focus:ring-2 focus:ring-brand-blue/10 transition-all text-sm font-medium"
-                                            />
+                                            <div className="relative w-full" ref={dropdownRef}>
+                                                <div
+                                                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                                                    className={`w-full px-5 py-3.5 bg-white/70 dark:bg-white/[0.04] backdrop-blur-lg border ${isDropdownOpen ? 'border-brand-blue/40 ring-2 ring-brand-blue/10' : 'border-white/50 dark:border-white/[0.08]'} rounded-xl text-sm font-medium transition-all cursor-pointer flex items-center justify-between ${formState.subject ? 'text-foreground' : 'text-foreground/30'}`}
+                                                >
+                                                    <span className="truncate pr-4">{formState.subject || (t("contact.placeholderSubject") as string)}</span>
+                                                    <ChevronDown size={18} className={`text-foreground/40 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                                                </div>
+
+                                                {/* Hidden input to maintain HTML5 'required' validation */}
+                                                <input
+                                                    type="text"
+                                                    required
+                                                    value={formState.subject}
+                                                    onChange={() => {}}
+                                                    className="absolute opacity-0 w-full h-[1px] bottom-0 pointer-events-none"
+                                                    tabIndex={-1}
+                                                />
+                                                
+                                                <AnimatePresence>
+                                                    {isDropdownOpen && (
+                                                        <motion.div
+                                                            initial={{ opacity: 0, y: 10 }}
+                                                            animate={{ opacity: 1, y: 0 }}
+                                                            exit={{ opacity: 0, y: 10 }}
+                                                            transition={{ duration: 0.2 }}
+                                                            className="absolute z-50 w-full mt-2 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border border-white/50 dark:border-white/10 rounded-xl shadow-2xl overflow-hidden max-h-60 overflow-y-auto"
+                                                        >
+                                                            <div className="p-1.5 flex flex-col gap-1">
+                                                                {serviceTitles.map((title, idx) => (
+                                                                    <div
+                                                                        key={idx}
+                                                                        onClick={() => {
+                                                                            handleChange("subject", title);
+                                                                            setIsDropdownOpen(false);
+                                                                        }}
+                                                                        className={`px-4 py-3 rounded-lg text-sm font-medium cursor-pointer transition-colors ${formState.subject === title ? 'bg-brand-blue/10 text-brand-blue' : 'text-foreground/70 hover:bg-black/5 dark:hover:bg-white/5 hover:text-foreground'}`}
+                                                                    >
+                                                                        {title}
+                                                                    </div>
+                                                                ))}
+                                                            </div>
+                                                        </motion.div>
+                                                    )}
+                                                </AnimatePresence>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -301,6 +318,47 @@ export default function ContactClient() {
                         </div>
                     </FadeUp>
 
+                </div>
+            </section>
+
+            {/* ═══════════════════════════════════════════
+          3. CONTACT INFO CARDS
+      ═══════════════════════════════════════════ */}
+            <section className="relative bg-transparent pb-8 overflow-hidden">
+                <div className="container-custom relative z-10">
+                    <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                        {contactInfoTranslated.map((info, i) => {
+                            const isGreen = info.color === "green";
+                            return (
+                                <FadeUp key={i} delay={i * 80}>
+                                    <TiltCard className="h-full w-full">
+                                        <a
+                                            href={info.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="block no-underline h-full"
+                                        >
+                                            <div className={`relative h-full w-full bg-white/60 dark:bg-white/[0.06] backdrop-blur-2xl border border-white/50 dark:border-white/[0.08] rounded-[2rem] p-8 flex flex-col items-center text-center shadow-xl shadow-foreground/[0.03] overflow-hidden transition-all duration-500 group ${isGreen ? 'hover:border-brand-green/30' : 'hover:border-brand-blue/30'}`}>
+                                                <TextureOverlay />
+                                                <div className={`absolute top-0 left-0 w-24 h-24 blur-3xl opacity-10 pointer-events-none z-0 ${isGreen ? 'bg-brand-green' : 'bg-brand-blue'}`} />
+
+                                                <div className="relative z-10 flex flex-col items-center">
+                                                    <div className={`h-14 w-14 rounded-2xl flex items-center justify-center mb-5 border transition-all duration-500 group-hover:scale-110 ${isGreen ? 'bg-brand-green/10 border-brand-green/20 text-brand-green group-hover:bg-brand-green group-hover:text-white' : 'bg-brand-blue/10 border-brand-blue/20 text-brand-blue group-hover:bg-brand-blue group-hover:text-white'}`}>
+                                                        <info.icon size={24} />
+                                                    </div>
+                                                    <span className="text-[10px] font-black uppercase tracking-widest text-foreground/40 mb-2">{info.label}</span>
+                                                    <h3 className={`text-base font-display font-bold text-foreground tracking-tight mb-1 transition-colors ${isGreen ? 'group-hover:text-brand-green' : 'group-hover:text-brand-blue'}`}>
+                                                        {info.value}
+                                                    </h3>
+                                                    <p className="text-xs text-foreground/50 m-0">{info.sub}</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </TiltCard>
+                                </FadeUp>
+                            );
+                        })}
+                    </div>
                 </div>
             </section>
         </div>

@@ -117,8 +117,8 @@ export default function Hero() {
                 ))}
             </motion.div>
 
-            {/* Main Content Container - Extra left padding on mobile so content clears the absolute icons */}
-            <div className="container-custom relative z-[4] w-full h-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8   lg:pl-12">
+            {/* Main Content Container - Extra left padding to ensure content safely clears the absolute icons at all breakpoints */}
+            <div className="container-custom relative z-[4] w-full h-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 pl-16 sm:pl-24 lg:pl-24 xl:pl-12 2xl:pl-8">
 
                 {/* ==========================================
                     LEFT SIDE: ORIGINAL PC TEXT & PC BUTTONS 

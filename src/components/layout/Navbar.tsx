@@ -73,33 +73,33 @@ export default function Navbar() {
 
     return (
         <header
-            className={`fixed w-full top-0 z-50 transition-all duration-500 border-b ${
+            className={`fixed w-full top-0 z-50 transition-all duration-500  ${
                 scrolled
-                    ? "glass-panel py-3 border-foreground/10 shadow-sm backdrop-blur-xl bg-white/80 dark:bg-gray-900/80"
+                    ? " py-3 border-foreground  bg-white dark:bg-gray-900"
                     : "bg-transparent py-6 border-transparent"
             }`}
         >
             {/* --- MAIN NAVBAR --- */}
-            <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-6 md:px-12">
+            <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-6 md:px-12 relative">
                 {/* Logo */}
                 <Link
                     href="/"
-                    className="z-[60] shrink-0 no-underline outline-none flex items-center"
+                    className="z-60 shrink-0 no-underline outline-none flex items-center"
                     aria-label="Home"
                     onClick={() => setIsMenuOpen(false)}
                 >
                     <Image
                         src="./assets/logo/thingsatweb.png"
                         alt="Things at Web"
-                        width={140}
-                        height={40}
-                        className="h-8 w-auto object-contain"
+                        width={240}
+                        height={64}
+                        className={`w-auto object-contain transition-all duration-500 ${scrolled ? "h-8 md:h-10" : "h-10 md:h-14 lg:h-16"}`}
                         priority
                     />
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden lg:flex gap-6 items-center font-medium text-[18px] tracking-wide h-full relative">
+                <nav className="hidden lg:flex gap-6 items-center font-medium text-[18px] tracking-wide absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
 
                     <Link href="/" className="text-foreground hover:text-brand-green transition-colors no-underline">
                         {t("nav.home") as string}
@@ -177,9 +177,11 @@ export default function Navbar() {
                     <Link href="/news" className="text-foreground hover:text-brand-green transition-colors no-underline">
                         {t("nav.news") as string}
                     </Link>
+                </nav>
 
-                    <div className="flex items-center gap-3 pl-4 border-l border-foreground/10">
-                        {/* Dark/Light Mode Toggle */}
+                {/* Desktop Right Side Tools */}
+                <div className="hidden lg:flex items-center gap-3 z-[60]">
+                    {/* Dark/Light Mode Toggle */}
                         {mounted && (
                             <button
                                 onClick={toggleTheme}
@@ -221,8 +223,6 @@ export default function Navbar() {
                             {t("nav.letsTalk") as string}
                         </Link>
                     </div>
-
-                </nav>
 
                 {/* Mobile Menu Toggle & Theme Mode Toggle */}
                 <div className="flex items-center gap-2 lg:hidden z-[60]">

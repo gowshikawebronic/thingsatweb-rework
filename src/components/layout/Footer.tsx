@@ -47,7 +47,7 @@ export default function Footer() {
             {/* Subtle Matte Texture */}
             <TextureOverlay className="opacity-[0.03]" />
 
-            <div className="container-custom relative z-10">
+            <div className="px-10 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 pb-16">
 
                     {/* ==========================================
@@ -195,7 +195,7 @@ export default function Footer() {
 
             {/* --- MASSIVE BACKGROUND AGENCY TEXT --- */}
             <div className="relative w-full overflow-hidden flex justify-center pb-6 mt-10 pointer-events-none select-none">
-                <h1 className="text-[12vw] leading-none font-display font-black text-foreground/[0.03] dark:text-foreground/[0.02] tracking-tighter whitespace-nowrap">
+                <h1 className="text-[12vw] leading-none font-display font-black text-foreground/10 dark:text-foreground/10 tracking-tighter whitespace-nowrap">
                     THINGS AT WEB
                 </h1>
             </div>
