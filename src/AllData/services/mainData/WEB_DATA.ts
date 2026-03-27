@@ -25,7 +25,7 @@ export const WEB_DATA: ServicePageData = {
       { name: "PHP", logo: "./assets/images/Technology/PHP-logo.svg" },
       { name: "MySQL", logo: "./assets/images/Technology/MySQL_textlogo.svg" },
       { name: "Node.js", logo: "./assets/images/Technology/Node.js_logo.svg" },
-      { name: "WooCommerce", logo: "./assets/images/Technology/WooCommerce_Logo.svg" },
+      { name: "WooCommerce", logo: "./assets/images/Technology/WooCommerce_logo.svg" },
       { name: "jQuery", logo: "./assets/images/Technology/JQuery-Logo.svg" },
     ],
   },
